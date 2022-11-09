@@ -1,0 +1,16 @@
+---
+title: "DataCleaning"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+raw_data <- read_csv('CopyOfSTA130_Course_Project (1).csv') # change the file name to your csv file name 
+head(raw_data, 1000)
+cleaned_data <- raw_data %>% filter(Timepoint == "0.5 h" && Drugs == "Vem" && Doses == "0 uM")
+head(cleaned_data, 100)
+```
